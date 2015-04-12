@@ -48,6 +48,11 @@ public class Application extends javax.swing.JFrame {
         btCong.setText("+");
 
         btTru.setText("-");
+        btTru.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btTruActionPerformed(evt);
+            }
+        });
 
         btNhan.setText("x");
 
@@ -109,6 +114,12 @@ public class Application extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btTruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTruActionPerformed
+        int number1 = Integer.parseInt(cbbNumber1.getText());
+        int number2 = Integer.parseInt(cbbNumber2.getText());
+        lbResult.setText("Result : "+(number1 - number2));
+    }//GEN-LAST:event_btTruActionPerformed
 
     /**
      * @param args the command line arguments
