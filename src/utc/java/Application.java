@@ -6,6 +6,8 @@
 
 package utc.java;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Ngo Hado
@@ -55,6 +57,11 @@ public class Application extends javax.swing.JFrame {
         });
 
         btNhan.setText("x");
+        btNhan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNhanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,6 +127,17 @@ public class Application extends javax.swing.JFrame {
         int number2 = Integer.parseInt(cbbNumber2.getText());
         lbResult.setText("Result : "+(number1 - number2));
     }//GEN-LAST:event_btTruActionPerformed
+
+    private void btNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNhanActionPerformed
+        if (cbbNumber1.getText().equals("") || cbbNumber2.getText().equals("")) JOptionPane.showMessageDialog(null, "Chua nhap so!");
+        else{
+            float a = Float.parseFloat(cbbNumber1.getText());
+            float b = Float.parseFloat(cbbNumber2.getText());
+            lbResult.setText("Result : "+(a*b));        
+        }// cha nho tnif (cbbNumber1.getText().equals("") || cbbNumber2.getText().equals("")) JOptionPane.showMessageDialog(null, "Chua nhap so!");
+        //chua tao cai tf result 
+        //t tao r ma
+    }//GEN-LAST:event_btNhanActionPerformed
 
     /**
      * @param args the command line arguments
